@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#7c3aed">
+    <link rel="icon" type="image/png" href="assets/icons/icon-192.png">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 </head>
 <body>
     <canvas id="particles-canvas"></canvas>
@@ -28,10 +32,10 @@
                 <li><a href="proceso.html" class="nav-link">Proceso</a></li>
                 <li><a href="contacto.html" class="nav-link">Contacto</a></li>
             </ul>
-            <div style="display:flex;align-items:center;gap:12px;">
+            <div class="nav-actions">
                 <div class="lang-switcher">
-                    <a href="servicios.html" class="lang-btn active"><span class="flag-es"></span> ES</a>
-                    <a href="en/services.html" class="lang-btn"><span class="flag-us"></span> EN</a>
+                    <a href="servicios.html" aria-label="Español" class="lang-btn active"><span class="flag-es"></span> <span class="lang-code">ES</span></a>
+                    <a href="en/services.html" aria-label="English" class="lang-btn"><span class="flag-us"></span> <span class="lang-code">EN</span></a>
                 </div>
                 <a href="https://wa.me/5356729186" target="_blank" class="nav-cta"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             </div>
@@ -81,7 +85,7 @@
                     <div class="card-glow"></div>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="250">
-                    <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
                     <h3>Marketing Digital</h3>
                     <p>Estrategias para posicionar tu marca, atraer clientes y maximizar el ROI.</p>
                     <ul class="service-features">
@@ -92,7 +96,7 @@
                     <div class="card-glow"></div>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-icon"><i class="fas fa-share-alt"></i></div>
+                    <div class="service-icon"><i class="fas fa-hashtag"></i></div>
                     <h3>Redes Sociales</h3>
                     <p>Gestión profesional, contenido creativo y campañas de engagement.</p>
                     <ul class="service-features">
@@ -103,7 +107,7 @@
                     <div class="card-glow"></div>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="350">
-                    <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
+                    <div class="service-icon"><i class="fas fa-diagram-project"></i></div>
                     <h3>Consultoría IT</h3>
                     <p>Asesoramiento en transformación digital, arquitectura y optimización.</p>
                     <ul class="service-features">
@@ -156,6 +160,12 @@
             <div class="footer-bottom"><p>&copy; 2025 R&R SoftTech. Todos los derechos reservados.</p></div>
         </div>
     </footer>
+    <div class="fab-group" role="group" aria-label="Contacto rápido">
+        <a href="tel:+5356729186" class="fab fab-call" aria-label="Llamar ahora" title="Llamar ahora"><i class="fas fa-phone-alt"></i></a>
+        <a href="https://wa.me/5356729186?text=Hola%20R%26R%20SoftTech" target="_blank" rel="noopener" class="fab fab-whatsapp" aria-label="Escribir por WhatsApp" title="Escribir por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <button class="install-btn" id="install-btn" type="button"><i class="fas fa-download"></i> <span>Descargar app</span></button>
+
     <button class="back-to-top" id="back-to-top"><i class="fas fa-chevron-up"></i></button>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/script.js"></script>

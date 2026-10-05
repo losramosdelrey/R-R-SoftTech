@@ -2,6 +2,9 @@
    R&R SoftTech - Interactive Scripts
    ======================================== */
 
+// Ruta de este script (sirve para localizar sw.js tanto en / como en /en/)
+const SCRIPT_URL = document.currentScript ? document.currentScript.src : '';
+
 // Initialize AOS
 AOS.init({
     duration: 800,
@@ -23,9 +26,14 @@ function resizeCanvas() {
 }
 
 resizeCanvas();
+let lastWidth = window.innerWidth;
 window.addEventListener('resize', () => {
     resizeCanvas();
-    initParticles();
+    // En móvil la barra de direcciones cambia la altura al hacer scroll: solo regenerar si cambia el ancho
+    if (window.innerWidth !== lastWidth) {
+        lastWidth = window.innerWidth;
+        initParticles();
+    }
 });
 
 class Particle {
@@ -80,7 +88,8 @@ class Particle {
 
 function initParticles() {
     particles = [];
-    const count = Math.min(Math.floor((canvas.width * canvas.height) / 12000), 100);
+    // Más estrellas: 1 por cada 5.000 px² (antes 12.000), con tope de 260 (antes 100)
+    const count = Math.min(Math.floor((canvas.width * canvas.height) / 5000), 260);
     for (let i = 0; i < count; i++) {
         particles.push(new Particle());
     }
@@ -318,3 +327,90 @@ document.addEventListener('mousemove', (e) => {
 
 console.log('%c🚀 R&R SoftTech', 'font-size: 24px; font-weight: bold; color: #7c3aed;');
 console.log('%cEl nexo entre tu idea y la excelencia digital.', 'font-size: 12px; color: #94a3b8;');
+
+
+// ========== Descargar / instalar aplicación (PWA) ==========
+(function () {
+    const installBtn = document.getElementById('install-btn');
+    const isEN = document.documentElement.lang === 'en';
+    let deferredPrompt = null;
+
+    // Service worker (necesario para que el navegador ofrezca instalar la app). Requiere https o localhost.
+    if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol) && SCRIPT_URL) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker
+                .register(new URL('../sw.js', SCRIPT_URL).href)
+                .catch((err) => console.warn('SW no registrado:', err));
+        });
+    }
+
+    if (!installBtn) return;
+
+    const isStandalone = () =>
+        window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+
+    if (isStandalone()) {
+        installBtn.hidden = true;
+        return;
+    }
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();          // guardamos el aviso para lanzarlo desde nuestro botón
+        deferredPrompt = e;
+    });
+
+    window.addEventListener('appinstalled', () => {
+        deferredPrompt = null;
+        installBtn.hidden = true;
+    });
+
+    const ua = navigator.userAgent || '';
+    const isIOS = /iphone|ipad|ipod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    const isAndroid = /android/i.test(ua);
+
+    const T = isEN ? {
+        title: 'Download the app',
+        intro: 'Install R&R SoftTech on your device to open it like any other app.',
+        ios: ['Tap the <strong>Share</strong> button in Safari.', 'Choose <strong>Add to Home Screen</strong>.', 'Tap <strong>Add</strong>.'],
+        android: ['Open the browser menu <strong>(⋮)</strong>.', 'Tap <strong>Install app</strong> or <strong>Add to Home screen</strong>.', 'Confirm with <strong>Install</strong>.'],
+        desktop: ['Look for the <strong>install icon</strong> at the right of the address bar (Chrome / Edge).', 'Click <strong>Install</strong>.'],
+        close: 'Close'
+    } : {
+        title: 'Descargar la aplicación',
+        intro: 'Instala R&R SoftTech en tu dispositivo para abrirla como cualquier otra app.',
+        ios: ['Pulsa el botón <strong>Compartir</strong> de Safari.', 'Elige <strong>Añadir a pantalla de inicio</strong>.', 'Pulsa <strong>Añadir</strong>.'],
+        android: ['Abre el menú del navegador <strong>(⋮)</strong>.', 'Pulsa <strong>Instalar aplicación</strong> o <strong>Añadir a pantalla de inicio</strong>.', 'Confirma con <strong>Instalar</strong>.'],
+        desktop: ['Busca el <strong>icono de instalar</strong> a la derecha de la barra de direcciones (Chrome / Edge).', 'Haz clic en <strong>Instalar</strong>.'],
+        close: 'Cerrar'
+    };
+
+    function openHelp() {
+        const steps = isIOS ? T.ios : isAndroid ? T.android : T.desktop;
+        let dlg = document.getElementById('install-dialog');
+        if (!dlg) {
+            dlg = document.createElement('dialog');
+            dlg.id = 'install-dialog';
+            dlg.className = 'install-dialog';
+            dlg.setAttribute('aria-labelledby', 'install-dialog-title');
+            document.body.appendChild(dlg);
+            dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+        }
+        dlg.innerHTML =
+            '<h3 id="install-dialog-title">' + T.title + '</h3>' +
+            '<p>' + T.intro + '</p>' +
+            '<ol>' + steps.map((s) => '<li>' + s + '</li>').join('') + '</ol>' +
+            '<button type="button" class="btn btn-primary" id="install-dialog-close"><span>' + T.close + '</span></button>';
+        dlg.querySelector('#install-dialog-close').addEventListener('click', () => dlg.close());
+        if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
+    }
+
+    installBtn.addEventListener('click', async () => {
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+            try { await deferredPrompt.userChoice; } catch (_) {}
+            deferredPrompt = null;
+        } else {
+            openHelp();   // iOS / navegadores sin instalación directa / ya instalada / abierto como archivo local
+        }
+    });
+})();

@@ -1201,34 +1201,6 @@ body:hover .cursor-glow {
 }
 
 @media (max-width: 768px) {
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        max-width: 320px;
-        height: 100vh;
-        background: rgba(10, 10, 15, 0.98);
-        backdrop-filter: blur(20px);
-        flex-direction: column;
-        padding: 100px 40px 40px;
-        gap: 24px;
-        transition: var(--transition);
-        border-left: 1px solid rgba(255, 255, 255, 0.05);
-    }
-    
-    .nav-links.active {
-        right: 0;
-    }
-    
-    .nav-cta {
-        display: none;
-    }
-    
-    .hamburger {
-        display: flex;
-    }
-    
     .about-grid {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -1532,7 +1504,491 @@ body:hover .cursor-glow {
     .lang-switcher {
         margin-left: 0;
     }
+}
+
+
+/* =====================================================================
+   AJUSTES RESPONSIVE + NUEVAS FUNCIONES
+   ===================================================================== */
+
+/* ---------- Header: acciones, idioma y hamburguesa ---------- */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-text {
+    white-space: nowrap;
+}
+
+.hamburger {
+    flex-shrink: 0;
+    justify-content: center;
+    height: 22px;
+}
+
+/* El menú se colapsa en ≤1024px: entre 769 y ~1020px el logo + 5 enlaces +
+   idiomas + WhatsApp no caben en una sola línea. */
+@media (max-width: 1024px) {
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background: rgba(10, 10, 15, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 100px 40px 40px;
+        gap: 24px;
+        transition: var(--transition);
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-cta {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-actions {
+        margin-left: auto;
+        margin-right: 16px;
+    }
+
+    .lang-switcher {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
     .nav-container {
+        padding: 0 16px;
+    }
+
+    .navbar .logo {
+        gap: 8px;
+        font-size: 0.95rem;
+    }
+
+    .navbar .logo-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 0.95rem;
+        border-radius: 10px;
+    }
+
+    .nav-actions {
+        gap: 8px;
+        margin-right: 12px;
+    }
+
+    .lang-switcher {
+        gap: 6px;
+    }
+
+    .lang-btn {
+        padding: 6px 8px;
+    }
+
+    /* En pantallas pequeñas se muestran solo las banderas */
+    .lang-code {
+        display: none;
+    }
+}
+
+@media (max-width: 360px) {
+    .navbar .logo {
+        font-size: 0.85rem;
+    }
+
+    .nav-actions {
+        margin-right: 8px;
+    }
+}
+
+/* ---------- Hero (Inicio) ---------- */
+.hero-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+    text-align: left;
+}
+
+.hero-split .hero-desc {
+    margin-left: 0;
+}
+
+.hero-split .hero-buttons,
+.hero-split .hero-stats {
+    justify-content: flex-start;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: calc(var(--nav-height) + 24px) 20px 56px;
+    }
+
+    /* Una sola columna: antes la imagen quedaba en ~150px y el cartel (nowrap) la tapaba */
+    .hero-split {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        text-align: center;
+    }
+
+    .hero-split .hero-desc {
+        margin: 0 auto 28px;
+        font-size: 1.02rem;
+    }
+
+    /* Botones centrados */
+    .hero-split .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 36px;
+    }
+
+    .hero-split .hero-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+
+    /* Estadísticas: más pequeñas y centradas, en una sola fila */
+    .hero-split .hero-stats {
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: clamp(16px, 6vw, 32px);
+    }
+
+    .hero-split .stat {
+        text-align: center;
+        font-size: 0.85rem;
+    }
+
+    .hero-split .stat-number {
+        font-size: 1.4rem;
+    }
+
+    .hero-split .stat-label {
+        font-size: 0.72rem;
+        margin-top: 2px;
+    }
+
+    /* Robot: imagen completa visible; el cartel solo "pisa" el borde inferior */
+    .robot-hero {
+        max-width: 280px;
+        margin-bottom: 28px;
+    }
+
+    .robot-badge {
+        bottom: 0;
+        transform: translate(-50%, 50%);
+        font-size: 0.78rem;
+        padding: 8px 18px;
+    }
+}
+
+/* ---------- Footer centrado en móvil ---------- */
+@media (max-width: 768px) {
+    .footer-content {
+        text-align: center;
+    }
+
+    .footer-brand .logo {
+        justify-content: center;
+    }
+
+    .footer-slogan {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Enlaces y Servicios: 2 columnas x 2 filas */
+    .footer-links ul,
+    .footer-services ul {
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        justify-content: center;
+        gap: 10px 32px;
+    }
+
+    .footer-links ul li,
+    .footer-services ul li {
+        margin-bottom: 0;
+    }
+
+    /* Contacto: ciudad en la 1.ª fila; teléfono y WhatsApp juntos en la 2.ª (con iconos) */
+    .footer-contact {
+        display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 24px;
+    }
+
+    .footer-contact h4 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .footer-contact p {
+        margin: 0;
+        justify-content: center;
+    }
+
+    .footer-contact p:first-of-type {
+        flex-basis: 100%;
+    }
+}
+
+/* ---------- Mapa (Contacto) ---------- */
+.map-block {
+    margin-top: 64px;
+}
+
+.map-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.map-head h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+}
+
+.map-head p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.map-head p i {
+    color: var(--primary-light);
+    margin-right: 6px;
+}
+
+.map-frame {
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--bg-card);
+    box-shadow: var(--shadow-card);
+}
+
+.map-frame iframe {
+    display: block;
+    width: 100%;
+    height: 420px;
+    border: 0;
+}
+
+@media (max-width: 768px) {
+    .map-block {
+        margin-top: 44px;
+    }
+
+    .map-head {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .map-frame {
+        border-radius: 18px;
+    }
+
+    .map-frame iframe {
+        height: 320px;
+    }
+}
+
+/* ---------- Botones flotantes: llamar + WhatsApp ---------- */
+.fab-group {
+    position: fixed;
+    right: 20px;
+    bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 998;
+}
+
+.fab {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.5rem;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45);
+    transition: var(--transition);
+}
+
+.fab:hover {
+    transform: translateY(-4px) scale(1.06);
+}
+
+.fab:focus-visible,
+.install-btn:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+}
+
+.fab-call {
+    background: linear-gradient(135deg, #06b6d4, #7c3aed);
+}
+
+.fab-whatsapp {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+}
+
+.fab-whatsapp::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(37, 211, 102, 0.7);
+    animation: fab-ping 2.4s ease-out infinite;
+    pointer-events: none;
+}
+
+@keyframes fab-ping {
+    0%   { transform: scale(1);   opacity: 0.8; }
+    100% { transform: scale(1.6); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fab-whatsapp::after { animation: none; display: none; }
+}
+
+/* "Volver arriba" se sube para no chocar con los botones flotantes */
+.back-to-top {
+    right: 23px;
+    bottom: calc(162px + env(safe-area-inset-bottom, 0px));
+}
+
+/* ---------- Botón descargar aplicación ---------- */
+.install-btn {
+    position: fixed;
+    left: 20px;
+    bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+    z-index: 998;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 48px;
+    padding: 0 20px;
+    border-radius: 50px;
+    background: var(--bg-glass);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(167, 139, 250, 0.5);
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45);
+    transition: var(--transition);
+}
+
+.install-btn i {
+    color: var(--secondary-light);
+}
+
+.install-btn:hover {
+    border-color: var(--secondary);
+    transform: translateY(-3px);
+}
+
+.install-btn[hidden] {
+    display: none;
+}
+
+/* Ventana con instrucciones cuando el navegador no ofrece instalación directa */
+.install-dialog {
+    margin: auto;
+    width: min(92vw, 420px);
+    padding: 28px 24px 24px;
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid rgba(124, 58, 237, 0.4);
+    border-radius: 20px;
+    box-shadow: var(--shadow-card), var(--shadow-glow);
+}
+
+.install-dialog::backdrop {
+    background: rgba(5, 5, 10, 0.75);
+    backdrop-filter: blur(4px);
+}
+
+.install-dialog h3 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+.install-dialog p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.install-dialog ol {
+    padding-left: 20px;
+    margin-bottom: 22px;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.install-dialog .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+@media (max-width: 480px) {
+    .fab-group {
+        right: 16px;
+        bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+    }
+
+    .fab {
+        width: 52px;
+        height: 52px;
+        font-size: 1.35rem;
+    }
+
+    .install-btn {
+        left: 16px;
+        bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+        height: 44px;
+        padding: 0 16px;
+        font-size: 0.85rem;
+    }
+
+    .back-to-top {
+        width: 44px;
+        height: 44px;
+        right: 20px;
+        bottom: calc(146px + env(safe-area-inset-bottom, 0px));
     }
 }
