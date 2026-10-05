@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | R&R SoftTech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+    <div class="cursor-glow"></div>
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-code"></i></span><span class="logo-text">R&R <span class="accent">SoftTech</span></span></a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="process.html" class="nav-link">Process</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+            <div style="display:flex;align-items:center;gap:12px;">
+                <div class="lang-switcher">
+                    <a href="../contacto.html" class="lang-btn"><span class="flag-es"></span> ES</a>
+                    <a href="contact.html" class="lang-btn active"><span class="flag-us"></span> EN</a>
+                </div>
+                <a href="https://wa.me/5356729186" target="_blank" class="nav-cta"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <section class="contact" style="padding-top:140px;">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Contact</span>
+                <h2 class="section-title">Let's talk about your <span class="gradient-text">project</span></h2>
+                <p class="section-desc">We're ready to listen and turn your vision into reality.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-card"><div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div><div><h4>Address</h4><p>Calle Rafael Morales No. 210<br>Pinar del Río, Cuba</p></div></div>
+                    <div class="contact-card"><div class="contact-icon"><i class="fas fa-phone-alt"></i></div><div><h4>Phone</h4><p><a href="tel:+5356729186">+53 56729186</a></p></div></div>
+                    <div class="contact-card"><div class="contact-icon whatsapp"><i class="fab fa-whatsapp"></i></div><div><h4>WhatsApp</h4><p><a href="https://wa.me/5356729186" target="_blank">+53 56729186</a></p></div></div>
+                    <div style="text-align:center;margin-top:20px;"><img src="../assets/19.webp" alt="R&R SoftTech Robot" style="max-width:220px;border-radius:16px;filter:drop-shadow(0 10px 25px rgba(124,58,237,0.3));"></div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form" data-aos="fade-left" id="contact-form">
+                    <div class="form-group"><input type="text" id="name" name="name" required placeholder=" "><label for="name">Full name</label></div>
+                    <div class="form-group"><input type="email" id="email" name="email" required placeholder=" "><label for="email">Email</label></div>
+                    <div class="form-group"><input type="tel" id="phone" name="phone" placeholder=" "><label for="phone">Phone (optional)</label></div>
+                    <div class="form-group">
+                        <select id="service" name="service" required>
+                            <option value="" disabled selected></option>
+                            <option value="software">Software Development</option>
+                            <option value="mobile">Mobile Apps</option>
+                            <option value="design">Design & Branding</option>
+                            <option value="marketing">Digital Marketing</option>
+                            <option value="social">Social Media</option>
+                            <option value="consulting">IT Consulting</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <label for="service">Service of interest</label>
+                    </div>
+                    <div class="form-group"><textarea id="message" name="message" rows="4" required placeholder=" "></textarea><label for="message">Tell us about your project</label></div>
+                    <button type="submit" class="btn btn-primary btn-full"><span>Send Message</span><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand"><a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-code"></i></span><span class="logo-text">R&R <span class="accent">SoftTech</span></span></a><p class="footer-slogan">"The link between your idea and digital excellence."</p></div>
+                <div class="footer-links"><h4>Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+                <div class="footer-services"><h4>Services</h4><ul><li>Custom Software</li><li>Mobile Apps</li><li>Design & Logos</li><li>Digital Marketing</li></ul></div>
+                <div class="footer-contact"><h4>Contact</h4><p><i class="fas fa-map-marker-alt"></i> Pinar del Río, Cuba</p><p><i class="fas fa-phone"></i> +53 56729186</p><p><i class="fab fa-whatsapp"></i> +53 56729186</p></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 R&R SoftTech. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <button class="back-to-top" id="back-to-top"><i class="fas fa-chevron-up"></i></button>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Servicios de R&R SoftTech: Software, Apps Móviles, Diseño, Marketing Digital y Redes Sociales.">
+    <title>Servicios | R&R SoftTech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+    <div class="cursor-glow"></div>
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="fas fa-code"></i></span>
+                <span class="logo-text">R&R <span class="accent">SoftTech</span></span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="servicios.html" class="nav-link active">Servicios</a></li>
+                <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                <li><a href="proceso.html" class="nav-link">Proceso</a></li>
+                <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+            <div style="display:flex;align-items:center;gap:12px;">
+                <div class="lang-switcher">
+                    <a href="servicios.html" class="lang-btn active"><span class="flag-es"></span> ES</a>
+                    <a href="en/services.html" class="lang-btn"><span class="flag-us"></span> EN</a>
+                </div>
+                <a href="https://wa.me/5356729186" target="_blank" class="nav-cta"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <section class="services" style="padding-top:140px;">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Nuestros Servicios</span>
+                <h2 class="section-title">Soluciones <span class="gradient-text">Digitales</span> Completas</h2>
+                <p class="section-desc">Desde la idea hasta el lanzamiento, te acompañamos en cada paso.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Desarrollo de Software</h3>
+                    <p>Aplicaciones web y de escritorio a medida, sistemas empresariales, ERP, CRM y soluciones personalizadas.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Aplicaciones Web</li>
+                        <li><i class="fas fa-check"></i> Sistemas Empresariales</li>
+                        <li><i class="fas fa-check"></i> APIs y Backend</li>
+                    </ul>
+                    <div class="card-glow"></div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Apps Móviles</h3>
+                    <p>Desarrollo nativo e híbrido para iOS y Android. Experiencias fluidas y modernas.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> iOS & Android</li>
+                        <li><i class="fas fa-check"></i> React Native / Flutter</li>
+                        <li><i class="fas fa-check"></i> Apps Nativas</li>
+                    </ul>
+                    <div class="card-glow"></div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon"><i class="fas fa-palette"></i></div>
+                    <h3>Diseño & Branding</h3>
+                    <p>Identidad visual completa: logos, eslóganes, UI/UX y diseño gráfico.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Logos & Identidad</li>
+                        <li><i class="fas fa-check"></i> UI/UX Design</li>
+                        <li><i class="fas fa-check"></i> Material Gráfico</li>
+                    </ul>
+                    <div class="card-glow"></div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+                    <h3>Marketing Digital</h3>
+                    <p>Estrategias para posicionar tu marca, atraer clientes y maximizar el ROI.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> SEO & SEM</li>
+                        <li><i class="fas fa-check"></i> Email Marketing</li>
+                        <li><i class="fas fa-check"></i> Estrategia de Contenidos</li>
+                    </ul>
+                    <div class="card-glow"></div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon"><i class="fas fa-share-alt"></i></div>
+                    <h3>Redes Sociales</h3>
+                    <p>Gestión profesional, contenido creativo y campañas de engagement.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Community Management</li>
+                        <li><i class="fas fa-check"></i> Contenido Creativo</li>
+                        <li><i class="fas fa-check"></i> Publicidad Social</li>
+                    </ul>
+                    <div class="card-glow"></div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="350">
+                    <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Consultoría IT</h3>
+                    <p>Asesoramiento en transformación digital, arquitectura y optimización.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Transformación Digital</li>
+                        <li><i class="fas fa-check"></i> Arquitectura</li>
+                        <li><i class="fas fa-check"></i> Optimización</li>
+                    </ul>
+                    <div class="card-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding:60px 0;">
+        <div class="container">
+            <div class="robot-section">
+                <div data-aos="fade-right">
+                    <span class="section-tag">Tecnología con alma</span>
+                    <h2 class="section-title">Nuestro robot <span class="gradient-text">trabaja contigo</span></h2>
+                    <p style="color:var(--text-secondary);line-height:1.7;">Desde el diseño de apps hasta el desarrollo de sistemas complejos, nuestro personaje representa la dedicación y el cariño que ponemos en cada proyecto.</p>
+                </div>
+                <div class="robot-img-wrap" data-aos="fade-left">
+                    <img src="assets/5.webp" alt="Robot R&R SoftTech en sala de servidores">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-content" data-aos="zoom-in">
+                <h2>¿Necesitas alguno de estos servicios?</h2>
+                <p>Cuéntanos tu proyecto y te damos una propuesta sin compromiso.</p>
+                <a href="contacto.html" class="btn btn-primary btn-large"><span>Solicitar Cotización</span><i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-code"></i></span><span class="logo-text">R&R <span class="accent">SoftTech</span></span></a>
+                    <p class="footer-slogan">"El nexo entre tu idea y la excelencia digital."</p>
+                </div>
+                <div class="footer-links"><h4>Enlaces</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+                <div class="footer-services"><h4>Servicios</h4><ul><li>Software a Medida</li><li>Apps Móviles</li><li>Diseño & Logos</li><li>Marketing Digital</li></ul></div>
+                <div class="footer-contact"><h4>Contacto</h4><p><i class="fas fa-map-marker-alt"></i> Pinar del Río, Cuba</p><p><i class="fas fa-phone"></i> +53 56729186</p><p><i class="fab fa-whatsapp"></i> +53 56729186</p></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 R&R SoftTech. Todos los derechos reservados.</p></div>
+        </div>
+    </footer>
+    <button class="back-to-top" id="back-to-top"><i class="fas fa-chevron-up"></i></button>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
