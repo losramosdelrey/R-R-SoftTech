@@ -1992,3 +1992,19 @@ body:hover .cursor-glow {
         bottom: calc(146px + env(safe-area-inset-bottom, 0px));
     }
 }
+
+/* ===== Marca y producto Valora en el inicio ===== */
+.logo-text{display:inline-flex;flex-direction:column;line-height:1.1}
+.logo-sub{font-size:.58rem;font-weight:500;letter-spacing:.06em;opacity:.8;margin-top:2px}
+.title-sub{display:block;font-size:clamp(1rem,2.2vw,1.5rem);font-weight:500;opacity:.85;margin:.2rem 0 .6rem}
+.vp-ribbon{display:block;margin-top:72px;padding:.7rem 1rem;text-align:center;background:linear-gradient(90deg,#c9a227,#f2d675);color:#050b4a;font-size:.92rem;text-decoration:none}
+.vp-ribbon u{margin-left:.4rem;font-weight:700}
+.product-feature{padding:80px 0;background:linear-gradient(135deg,#050b4a,#0d1a7a);color:#fff}
+.prod-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;align-items:center}
+.prod-copy p{opacity:.85;line-height:1.65;max-width:52ch}
+.prod-points{list-style:none;padding:0;margin:1.2rem 0;display:grid;gap:.5rem}
+.prod-points i{color:#f2d675;margin-right:.4rem}
+.prod-actions{display:flex;flex-wrap:wrap;gap:.8rem}
+.prod-fig{margin:0;border:1px solid #c9a227;border-radius:16px;overflow:hidden;box-shadow:0 0 50px rgba(59,108,255,.3)}
+.prod-fig img{display:block;width:100%;height:auto}
+@media(max-width:860px){.prod-grid{grid-template-columns:1fr;gap:1.6rem}}

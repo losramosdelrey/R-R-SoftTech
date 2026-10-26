@@ -3,380 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Valora v2.9.4 — App de gestión empresarial de R&R SoftTech. Inventario, caja, utilidad y control diario en CUP y USD. Sin internet. Pago único. Sepa lo que vale su negocio, hoy.">
-    <meta name="keywords" content="Valora, inventario, Cuba, R&R SoftTech, control de caja, IPV, software empresarial, Windows">
-    <title>Valora v2.9.4 | R&R SoftTech — Sepa lo que vale su negocio, hoy</title>
+    <meta name="description" content="R&R SoftTech Innovación Tecnológica — creadores de Valora, la app de gestión empresarial (v2.9.4). El nexo entre tu idea y la excelencia digital. Desarrollo de software, apps móviles, diseño y marketing digital en Pinar del Río, Cuba.">
+    <title>R&R SoftTech Innovación Tecnológica | Excelencia Digital</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/valora.css">
     <link rel="manifest" href="manifest.webmanifest">
-    <meta name="theme-color" content="#050b4a">
+    <meta name="theme-color" content="#7c3aed">
     <link rel="icon" type="image/png" href="assets/icons/icon-192.png">
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 </head>
 <body>
     <canvas id="particles-canvas"></canvas>
     <div class="cursor-glow"></div>
-
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo logo-dual">
-                <span class="logo-icon"><i class="fas fa-chart-line"></i></span>
-                <span class="logo-text">
-                    <span class="logo-valora">Valora</span>
-                    <span class="logo-rr">R&amp;R SoftTech</span>
-                </span>
-            </a>
+            <a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-code"></i></span><span class="logo-text">R&R <span class="accent">SoftTech</span><small class="logo-sub">Innovación Tecnológica</small></span></a>
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html" class="nav-link active">Inicio</a></li>
-                <li><a href="valora.html" class="nav-link">Promoción</a></li>
-                <li><a href="#valora" class="nav-link">Valora</a></li>
-                <li><a href="#funciones" class="nav-link">Funciones</a></li>
+                <li><a href="valora.html" class="nav-link">Valora</a></li>
                 <li><a href="servicios.html" class="nav-link">Servicios</a></li>
                 <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                <li><a href="proceso.html" class="nav-link">Proceso</a></li>
                 <li><a href="contacto.html" class="nav-link">Contacto</a></li>
             </ul>
             <div class="nav-actions">
                 <div class="lang-switcher">
-                    <a href="index.html" class="lang-btn active" title="Español"><span class="flag-es"></span> <span class="lang-code">ES</span></a>
-                    <a href="en/index.html" class="lang-btn" title="English"><span class="flag-us"></span> <span class="lang-code">EN</span></a>
+                    <a href="index.html" aria-label="Español" class="lang-btn active"><span class="flag-es"></span> <span class="lang-code">ES</span></a>
+                    <a href="en/index.html" aria-label="English" class="lang-btn"><span class="flag-us"></span> <span class="lang-code">EN</span></a>
                 </div>
-                <a href="https://wa.me/5356729186?text=Hola%2C%20quiero%20cotizar%20Valora%20v2.9.4" target="_blank" class="nav-cta">
-                    <i class="fab fa-whatsapp"></i> Cotizar Valora
-                </a>
+                <a href="https://wa.me/5356729186" target="_blank" class="nav-cta"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             </div>
             <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
         </div>
     </nav>
 
     <a class="vp-ribbon" href="valora.html"><strong>Valora v2.9.4 en promoción</strong> Pago único, con instalación y capacitación incluidas. <u>Ver la oferta</u></a>
-    <section class="hero hero-valora">
+    <section class="hero">
         <div class="hero-bg">
             <div class="gradient-orb orb-1"></div>
             <div class="gradient-orb orb-2"></div>
-            <div class="gradient-orb orb-gold"></div>
+            <div class="gradient-orb orb-3"></div>
         </div>
-        <div class="hero-content hero-split hero-valora-split">
-            <div class="hero-copy">
-                <div class="hero-badge valora-badge" data-aos="fade-down">
-                    <i class="fas fa-rocket"></i> Producto estrella · v2.9.4
-                </div>
-                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="80">
-                    <span class="title-brand">Valora</span>
-                    <span class="title-slogan">Sepa lo que vale su negocio, <span class="gradient-gold">hoy</span></span>
+        <div class="hero-content hero-split">
+            <div>
+                <div class="hero-badge" data-aos="fade-down"><i class="fas fa-bolt"></i> Innovación Tecnológica</div>
+                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                    <span class="title-line">R&R SoftTech</span>
+                    <span class="title-sub">Innovación Tecnológica</span>
+                    <span class="title-slogan">El nexo entre tu idea y la <span class="gradient-text">excelencia digital</span></span>
                 </h1>
-                <p class="hero-desc" data-aos="fade-up" data-aos-delay="160">
-                    Más que un inventario: el control diario de ventas, costos, mermas, caja e IPV.
-                    Diseñado para el negocio cubano — <strong>CUP y USD</strong>, sin internet, pago único.
+                <p class="hero-desc" data-aos="fade-up" data-aos-delay="200">
+                    Convertimos ideas en soluciones digitales de alto impacto. Desarrollo de software, apps móviles, diseño y marketing digital. Creadores de Valora, nuestra app de gestión empresarial.
                 </p>
-                <div class="hero-pills" data-aos="fade-up" data-aos-delay="220">
-                    <span class="pill"><i class="fas fa-wallet"></i> Pago único</span>
-                    <span class="pill"><i class="fas fa-ban"></i> Sin internet</span>
-                    <span class="pill"><i class="fas fa-coins"></i> CUP + USD</span>
-                    <span class="pill"><i class="fas fa-desktop"></i> Windows 10/11</span>
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
+                    <a href="servicios.html" class="btn btn-primary"><span>Explorar servicios</span><i class="fas fa-arrow-right"></i></a>
+                    <a href="https://wa.me/5356729186" target="_blank" class="btn btn-secondary"><i class="fab fa-whatsapp"></i><span>Contáctanos</span></a>
                 </div>
-                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="280">
-                    <a href="https://wa.me/5356729186?text=Hola%2C%20quiero%20cotizar%20Valora%20v2.9.4" target="_blank" class="btn btn-gold">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>Solicitar cotización</span>
-                    </a>
-                    <a href="#funciones" class="btn btn-secondary">
-                        <span>Ver funciones</span>
-                        <i class="fas fa-arrow-down"></i>
-                    </a>
-                </div>
-                <p class="hero-byline" data-aos="fade-up" data-aos-delay="340">
-                    Por <strong>R&amp;R SoftTech</strong> · Innovación Tecnológica · WhatsApp +53 56729186
-                </p>
-            </div>
-            <div class="hero-visual" data-aos="fade-left" data-aos-delay="200">
-                <div class="hero-robot-frame">
-                    <img src="assets/valora-hero-robot.jpg" alt="Valora — asistente digital de control empresarial" class="hero-robot-img">
-                    <div class="hero-glow"></div>
+                <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat"><span class="stat-number" data-count="50">0</span>+<span class="stat-label">Proyectos</span></div>
+                    <div class="stat"><span class="stat-number" data-count="30">0</span>+<span class="stat-label">Clientes</span></div>
+                    <div class="stat"><span class="stat-number" data-count="5">0</span>+<span class="stat-label">Años</span></div>
                 </div>
             </div>
-        </div>
-        <div class="hero-scroll">
-            <a href="#problema"><i class="fas fa-chevron-down"></i></a>
-        </div>
-    </section>
-
-    <section class="section problem-section" id="problema">
-        <div class="container">
-            <div class="problem-grid">
-                <div class="problem-copy" data-aos="fade-right">
-                    <span class="section-tag">El problema</span>
-                    <h2 class="section-title">
-                        ¿Cansado de <span class="text-danger">perder dinero</span><br>
-                        por no controlar tu negocio?
-                    </h2>
-                    <p class="section-lead">
-                        Cada día sin cifras claras es una decisión a ciegas. Valora te dice, al cierre,
-                        cuánto vendiste, cuánto gastaste y cuánto ganaste — en CUP, con USD de referencia.
-                    </p>
-                    <ul class="check-list">
-                        <li><i class="fas fa-check-circle"></i> Existencias, ventas y mermas en un solo lugar</li>
-                        <li><i class="fas fa-check-circle"></i> Cierre de caja e IPV listos para imprimir en Word</li>
-                        <li><i class="fas fa-check-circle"></i> Utilidad bruta y neta sin hojas de cálculo eternas</li>
-                        <li><i class="fas fa-check-circle"></i> Tus datos en tu PC — sin depender de la nube</li>
-                    </ul>
-                </div>
-                <div class="problem-visual" data-aos="fade-left">
-                    <img src="assets/valora-robot-desk.jpg" alt="Control digital con Valora" class="rounded-img shadow-glow-gold">
-                </div>
+            <div class="robot-hero" data-aos="fade-left" data-aos-delay="200">
+                <img src="assets/4.webp" alt="Robot mascota de R&R SoftTech">
+                <div class="robot-badge">¡Tu aliado digital!</div>
             </div>
         </div>
     </section>
 
-    <section class="section valora-strip" id="valora">
+        <section class="product-feature" id="valora">
+        <div class="container prod-grid">
+            <div class="prod-copy" data-aos="fade-right">
+                <span class="section-tag">Nuestro producto</span>
+                <h2 class="section-title">Valora, la app de gestión empresarial de R&amp;R SoftTech Innovación Tecnológica</h2>
+                <p>Sepa lo que vale su negocio, hoy. Inventario, ventas, gastos y cierre de caja en CUP y USD, sin depender de internet.</p>
+                <ul class="prod-points"><li><i class="fas fa-check"></i> Pago único, sin mensualidades</li><li><i class="fas fa-check"></i> Funciona sin internet: tus datos, en tu PC</li><li><i class="fas fa-check"></i> Instalación, configuración y capacitación incluidas</li></ul>
+                <div class="prod-actions"><a href="valora.html" class="btn btn-primary"><span>Conocer Valora</span><i class="fas fa-arrow-right"></i></a><a href="https://wa.me/5356729186?text=Hola%2C%20quiero%20cotizar%20Valora%20v2.9.4" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-whatsapp"></i><span>Solicitar cotización</span></a></div>
+            </div>
+            <figure class="prod-fig" data-aos="fade-left"><img src="assets/valora-escenario.webp" alt="Valora presenta las ventas y la utilidad del negocio" loading="lazy"></figure>
+        </div>
+    </section>
+
+<section class="services">
         <div class="container">
-            <div class="strip-inner" data-aos="zoom-in">
-                <img src="assets/valora-splash-brand.jpg" alt="Valora — Sepa lo que vale su negocio, hoy" class="strip-brand-img">
-                <div class="strip-meta">
-                    <span class="version-chip">v2.9.4</span>
-                    <h2>App de gestión empresarial</h2>
-                    <p>Claridad · Control · Decisión</p>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Lo que hacemos</span>
+                <h2 class="section-title">Soluciones <span class="gradient-text">Digitales</span></h2>
+                <p class="section-desc">Servicios integrales para llevar tu negocio al siguiente nivel tecnológico.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Desarrollo de Software</h3>
+                    <p>Aplicaciones web y de escritorio a medida, sistemas empresariales y soluciones personalizadas.</p>
+                    <div class="card-glow"></div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Apps Móviles</h3>
+                    <p>Desarrollo nativo e híbrido para iOS y Android con experiencias fluidas y modernas.</p>
+                    <div class="card-glow"></div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon"><i class="fas fa-palette"></i></div>
+                    <h3>Diseño y Branding</h3>
+                    <p>Logos, identidad visual, UI/UX y materiales gráficos que conectan con tu público.</p>
+                    <div class="card-glow"></div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="section audience-section">
-        <div class="container">
-            <div class="section-header center" data-aos="fade-up">
-                <span class="section-tag">Un sistema para tu tipo de negocio</span>
-                <h2 class="section-title">Hecho para quien vende todos los días</h2>
-                <p class="section-lead">Paladares, restaurantes, almacenes, tiendas, cafeterías y comercios.</p>
-            </div>
-            <div class="audience-grid">
-                <div class="audience-card" data-aos="fade-up" data-aos-delay="0"><i class="fas fa-utensils"></i><span>Paladares</span></div>
-                <div class="audience-card" data-aos="fade-up" data-aos-delay="50"><i class="fas fa-concierge-bell"></i><span>Restaurantes</span></div>
-                <div class="audience-card" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-warehouse"></i><span>Almacenes</span></div>
-                <div class="audience-card" data-aos="fade-up" data-aos-delay="150"><i class="fas fa-store"></i><span>Tiendas</span></div>
-                <div class="audience-card" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-coffee"></i><span>Cafeterías</span></div>
-                <div class="audience-card" data-aos="fade-up" data-aos-delay="250"><i class="fas fa-shopping-bag"></i><span>Comercios</span></div>
+            <div style="text-align:center;margin-top:48px;" data-aos="fade-up">
+                <a href="servicios.html" class="btn btn-primary"><span>Ver todos los servicios</span><i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
 
-    <section class="section features-section" id="funciones">
+    <section class="about" style="padding:80px 0;">
         <div class="container">
-            <div class="section-header center" data-aos="fade-up">
-                <span class="section-tag">¿Qué puedes controlar?</span>
-                <h2 class="section-title">Todo lo que importa, en una sola app</h2>
-            </div>
-            <div class="features-grid">
-                <article class="feature-card" data-aos="fade-up" data-aos-delay="0">
-                    <div class="feature-icon"><i class="fas fa-boxes-stacked"></i></div>
-                    <h3>Inventario inteligente</h3>
-                    <p>Entradas, salidas de almacén a tienda, existencias por producto y alertas de vencimiento.</p>
-                </article>
-                <article class="feature-card" data-aos="fade-up" data-aos-delay="60">
-                    <div class="feature-icon"><i class="fas fa-cash-register"></i></div>
-                    <h3>Control de ventas</h3>
-                    <p>Registra cada venta y mira el importe del día y del mes en CUP, con el USD de referencia.</p>
-                </article>
-                <article class="feature-card" data-aos="fade-up" data-aos-delay="120">
-                    <div class="feature-icon"><i class="fas fa-chart-pie"></i></div>
-                    <h3>Costos y utilidad</h3>
-                    <p>Precio de costo y de venta por producto. La utilidad bruta aparece sola.</p>
-                </article>
-                <article class="feature-card" data-aos="fade-up" data-aos-delay="180">
-                    <div class="feature-icon"><i class="fas fa-receipt"></i></div>
-                    <h3>Control de gastos</h3>
-                    <p>Salarios, electricidad, transporte, impuestos y más. Conoce tu utilidad neta del mes.</p>
-                </article>
-                <article class="feature-card" data-aos="fade-up" data-aos-delay="240">
-                    <div class="feature-icon"><i class="fas fa-triangle-exclamation"></i></div>
-                    <h3>Menos pérdidas y mermas</h3>
-                    <p>Registra las mermas valoradas al costo y llévalas a gastos con un solo botón.</p>
-                </article>
-                <article class="feature-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-                    <h3>Cierre de caja e IPV</h3>
-                    <p>Apertura de turno, cierre en CUP y USD, e IPV del día listo para imprimir en Word.</p>
-                </article>
-                <article class="feature-card" data-aos="fade-up" data-aos-delay="360">
-                    <div class="feature-icon"><i class="fas fa-server"></i></div>
-                    <h3>Funciona sin internet</h3>
-                    <p>Tus datos viven en tu computadora. Vendes y controlas aunque no haya conexión.</p>
-                </article>
-                <article class="feature-card" data-aos="fade-up" data-aos-delay="420">
-                    <div class="feature-icon"><i class="fas fa-file-excel"></i></div>
-                    <h3>Reportes Word y Excel</h3>
-                    <p>Imprime y exporta informes. Importa tu catálogo de productos desde Excel.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section class="section cuba-section">
-        <div class="container">
-            <div class="cuba-grid">
-                <div class="cuba-visual" data-aos="fade-right">
-                    <img src="assets/valora-robot-action.jpg" alt="Valora en acción" class="rounded-img">
+            <div class="robot-section">
+                <div class="robot-img-wrap" data-aos="fade-right">
+                    <img src="assets/8.webp" alt="Robot de R&R SoftTech trabajando en circuitos">
                 </div>
-                <div class="cuba-copy" data-aos="fade-left">
-                    <span class="section-tag">Pensado para Cuba</span>
-                    <h2 class="section-title">Tu moneda, tu tasa, tu equipo</h2>
-                    <div class="cuba-points">
-                        <div class="cuba-point">
-                            <i class="fas fa-money-bill-wave"></i>
-                            <div>
-                                <h4>Tu moneda, tu tasa</h4>
-                                <p>CUP como moneda principal. USD de referencia con la tasa que tú fijas. Cambiar la tasa no altera lo ya vendido.</p>
-                            </div>
-                        </div>
-                        <div class="cuba-point">
-                            <i class="fas fa-hard-drive"></i>
-                            <div>
-                                <h4>Sin depender de internet</h4>
-                                <p>Instalación local en Windows 10/11. Tus datos quedan en tu equipo. Respaldo con un clic desde Administración.</p>
-                            </div>
-                        </div>
-                        <div class="cuba-point">
-                            <i class="fas fa-shield-halved"></i>
-                            <div>
-                                <h4>Control y seguridad</h4>
-                                <p>Roles Administrador y Usuario. Contraseñas cifradas. Bloqueo tras intentos fallidos. Bitácora de auditoría.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div data-aos="fade-left">
+                    <span class="section-tag">Nuestra mascota</span>
+                    <h2 class="section-title">Conoce a nuestro <span class="gradient-text">robot</span></h2>
+                    <p style="color:var(--text-secondary);margin-bottom:16px;line-height:1.7;">Nuestro personaje representa la esencia de R&R SoftTech: tecnología con corazón, precisión y creatividad. Siempre listo para convertir ideas en excelencia.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section steps-section">
+    <section class="cta-banner">
         <div class="container">
-            <div class="section-header center" data-aos="fade-up">
-                <span class="section-tag">Simple desde el primer día</span>
-                <h2 class="section-title">Tres pasos y tu negocio queda controlado</h2>
-            </div>
-            <div class="steps-row">
-                <div class="step-card" data-aos="fade-up" data-aos-delay="0">
-                    <div class="step-num">1</div>
-                    <h3>Instala y configura</h3>
-                    <p>Crea el administrador, define la tasa CUP/USD y carga tus productos (o impórtalos desde Excel).</p>
-                </div>
-                <div class="step-connector" data-aos="fade-up" data-aos-delay="80"></div>
-                <div class="step-card" data-aos="fade-up" data-aos-delay="120">
-                    <div class="step-num">2</div>
-                    <h3>Opera el día a día</h3>
-                    <p>Abre turno, registra entradas, ventas y mermas. El sistema calcula importes y utilidad en tiempo real.</p>
-                </div>
-                <div class="step-connector" data-aos="fade-up" data-aos-delay="180"></div>
-                <div class="step-card" data-aos="fade-up" data-aos-delay="240">
-                    <div class="step-num">3</div>
-                    <h3>Cierra e imprime</h3>
-                    <p>Cierra la caja, revisa diferencias y genera el IPV del día en Word o Excel listo para archivar.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section gallery-section">
-        <div class="container">
-            <div class="section-header center" data-aos="fade-up">
-                <span class="section-tag">Identidad Valora</span>
-                <h2 class="section-title">La inteligencia que cuida tu negocio</h2>
-            </div>
-            <div class="gallery-grid">
-                <figure class="gallery-item large" data-aos="zoom-in">
-                    <img src="assets/rr-robot-hologram.jpg" alt="R&amp;R SoftTech — Innovación Tecnológica">
-                    <figcaption>R&amp;R SoftTech · Innovación Tecnológica</figcaption>
-                </figure>
-                <figure class="gallery-item" data-aos="zoom-in" data-aos-delay="80">
-                    <img src="assets/valora-robot-stand.jpg" alt="Asistente Valora">
-                </figure>
-                <figure class="gallery-item" data-aos="zoom-in" data-aos-delay="140">
-                    <img src="assets/valora-robot-portrait.jpg" alt="Detalle Valora">
-                </figure>
-            </div>
-        </div>
-    </section>
-
-    <section class="section cta-valora">
-        <div class="container">
-            <div class="cta-box" data-aos="zoom-in">
-                <div class="cta-robot">
-                    <img src="assets/valora-robot-transparent.png" alt="Valora">
-                </div>
-                <div class="cta-copy">
-                    <span class="version-chip">Valora v2.9.4</span>
-                    <h2>Solicita tu cotización hoy mismo</h2>
-                    <p>Pago único · Sin mensualidades · Instalación en tu PC · Soporte por WhatsApp</p>
-                    <div class="cta-actions">
-                        <a href="https://wa.me/5356729186?text=Hola%2C%20quiero%20cotizar%20Valora%20v2.9.4" target="_blank" class="btn btn-gold btn-lg">
-                            <i class="fab fa-whatsapp"></i> WhatsApp +53 56729186
-                        </a>
-                        <a href="mailto:soporte@valora.com" class="btn btn-secondary btn-lg">
-                            <i class="fas fa-envelope"></i> soporte@valora.com
-                        </a>
-                    </div>
-                    <p class="cta-slogan">Sepa lo que vale su negocio, hoy.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section services-teaser">
-        <div class="container">
-            <div class="section-header center" data-aos="fade-up">
-                <span class="section-tag">También de R&amp;R SoftTech</span>
-                <h2 class="section-title">Más que Valora: excelencia digital a medida</h2>
-                <p class="section-lead">Desarrollo de software, apps, diseño y marketing. El nexo entre tu idea y la excelencia digital.</p>
-            </div>
-            <div class="teaser-actions" data-aos="fade-up">
-                <a href="servicios.html" class="btn btn-primary">Ver servicios</a>
-                <a href="nosotros.html" class="btn btn-secondary">Conocer la empresa</a>
-                <a href="contacto.html" class="btn btn-secondary">Contacto</a>
+            <div class="cta-content" data-aos="zoom-in">
+                <h2>¿Listo para llevar tu idea al siguiente nivel?</h2>
+                <p>Hablemos de tu proyecto. La primera consulta es gratis.</p>
+                <a href="https://wa.me/5356729186" target="_blank" class="btn btn-primary btn-large"><i class="fab fa-whatsapp"></i><span>Agendar consulta gratis</span></a>
             </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-content">
                 <div class="footer-brand">
-                    <div class="logo logo-dual">
-                        <span class="logo-icon"><i class="fas fa-chart-line"></i></span>
-                        <span class="logo-text">
-                            <span class="logo-valora">Valora</span>
-                            <span class="logo-rr">R&amp;R SoftTech</span>
-                        </span>
-                    </div>
-                    <p>Sepa lo que vale su negocio, hoy. Claridad · Control · Decisión.</p>
+                    <a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-code"></i></span><span class="logo-text">R&R <span class="accent">SoftTech</span><small class="logo-sub">Innovación Tecnológica</small></span></a>
+                    <p class="footer-slogan">"El nexo entre tu idea y la excelencia digital."</p>
                 </div>
-                <div class="footer-links">
-                    <h4>Producto</h4>
-                    <a href="#valora">Valora v2.9.4</a>
-                    <a href="#funciones">Funciones</a>
-                    <a href="servicios.html">Servicios</a>
-                </div>
-                <div class="footer-links">
-                    <h4>Empresa</h4>
-                    <a href="nosotros.html">Nosotros</a>
-                    <a href="proceso.html">Proceso</a>
-                    <a href="contacto.html">Contacto</a>
-                </div>
-                <div class="footer-links">
-                    <h4>Contacto</h4>
-                    <a href="https://wa.me/5356729186" target="_blank"><i class="fab fa-whatsapp"></i> +53 56729186</a>
-                    <a href="mailto:soporte@valora.com"><i class="fas fa-envelope"></i> soporte@valora.com</a>
-                </div>
+                <div class="footer-links"><h4>Enlaces</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="valora.html">Valora v2.9.4</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+                <div class="footer-services"><h4>Servicios</h4><ul><li>Software a Medida</li><li>Apps Móviles</li><li>Diseño & Logos</li><li>Marketing Digital</li></ul></div>
+                <div class="footer-contact"><h4>Contacto</h4><p><i class="fas fa-map-marker-alt"></i> Pinar del Río, Cuba</p><p><i class="fas fa-phone"></i> +53 56729186</p><p><i class="fab fa-whatsapp"></i> +53 56729186</p></div>
             </div>
-            <div class="footer-bottom">
-                <p>© 2026 R&amp;R SoftTech Innovación Tecnológica. Todos los derechos reservados.</p>
-                <p class="footer-product">Valora — App de gestión empresarial</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2026 R&R SoftTech Innovación Tecnológica. Todos los derechos reservados.</p></div>
         </div>
     </footer>
+    <div class="fab-group" role="group" aria-label="Quick contact">
+        <a href="tel:+5356729186" class="fab fab-call" aria-label="Call now" title="Call now"><i class="fas fa-phone-alt"></i></a>
+        <a href="https://wa.me/5356729186?text=Hello%20R%26R%20SoftTech" target="_blank" rel="noopener" class="fab fab-whatsapp" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <button class="install-btn" id="install-btn" type="button"><i class="fas fa-download"></i> <span>Download app</span></button>
 
+    <button class="back-to-top" id="back-to-top"><i class="fas fa-chevron-up"></i></button>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/script.js"></script>
 </body>
