@@ -2010,3 +2010,5 @@ body:hover .cursor-glow {
 @media(max-width:860px){.prod-grid{grid-template-columns:1fr;gap:1.6rem}}
 
 .robot-hero img{max-height:620px;object-fit:contain}
+.logo-name{white-space:nowrap}
+.product-feature .section-title{font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.2}

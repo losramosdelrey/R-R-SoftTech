@@ -551,3 +551,4 @@
 .vp-feat{padding:1.2rem;border:1px solid rgba(201,162,39,.35);border-radius:14px;background:rgba(5,11,74,.55)}
 .vp-feat i{color:var(--valora-gold-light);font-size:1.4rem}.vp-feat h3{font-size:1rem;margin:.7rem 0 .4rem}.vp-feat p{font-size:.9rem;opacity:.8;line-height:1.5;margin:0}
 @media(max-width:960px){.vp-feats{grid-template-columns:1fr 1fr}}@media(max-width:560px){.vp-feats{grid-template-columns:1fr}}
+.vp .section-header{text-align:center}.vp .section-header .section-lead{margin-inline:auto;text-align:center;max-width:60ch}
