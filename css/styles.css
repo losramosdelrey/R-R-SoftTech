@@ -2008,3 +2008,5 @@ body:hover .cursor-glow {
 .prod-fig{margin:0;border:1px solid #c9a227;border-radius:16px;overflow:hidden;box-shadow:0 0 50px rgba(59,108,255,.3)}
 .prod-fig img{display:block;width:100%;height:auto}
 @media(max-width:860px){.prod-grid{grid-template-columns:1fr;gap:1.6rem}}
+
+.robot-hero img{max-height:620px;object-fit:contain}
