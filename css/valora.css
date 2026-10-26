@@ -496,3 +496,53 @@
     .hero-pills { gap: 0.4rem; }
     .pill { font-size: 0.72rem; padding: 0.35rem 0.65rem; }
 }
+
+/* ===== Pagina de promocion Valora (valora.html) ===== */
+.vp-hero{padding:calc(var(--nav-height,72px) + 3rem) 0 3rem;text-align:left}
+.vp-hero h1{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.6rem);line-height:1.1;max-width:20ch;margin:1rem 0}
+.vp-lead{max-width:56ch;font-size:1.1rem;opacity:.85;line-height:1.65}
+.vp-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin:1.6rem 0 2.4rem}
+.vp-stage{margin:0;border:1px solid var(--valora-gold);border-radius:18px;overflow:hidden;box-shadow:0 0 60px rgba(59,108,255,.25)}
+.vp-stage img{display:block;width:100%;height:auto}
+.vp-offer{border-block:1px solid rgba(201,162,39,.35);background:rgba(13,26,122,.35)}
+.vp-offer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;padding-block:1.6rem}
+.vp-offer-grid div{display:grid;gap:.2rem;justify-items:start}
+.vp-offer-grid i{color:var(--valora-gold-light);font-size:1.3rem;margin-bottom:.3rem}
+.vp-offer-grid span{font-size:.9rem;opacity:.75}
+.vp-alt{background:rgba(13,26,122,.28)}
+.vp-app{display:grid;grid-template-columns:200px 1fr;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.14);background:#f4f6fb;color:#0b1240;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.vp-app aside{background:var(--valora-navy);color:#fff;padding:1.2rem;display:flex;flex-direction:column;gap:1rem}
+.vp-app aside b{font-family:var(--font-display);color:var(--valora-gold-light)}
+.vp-app aside ul{list-style:none;padding:0;margin:0;display:grid;gap:.35rem;font-size:.9rem}
+.vp-app aside li{padding:.45rem .7rem;border-radius:8px;opacity:.8}
+.vp-app aside li.on{background:var(--valora-blue);opacity:1}
+.vp-app aside em{margin-top:auto;font-size:.75rem;color:var(--valora-gold-light)}
+.vp-main{padding:1.2rem;display:grid;gap:1.1rem}
+.vp-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}
+.k{border-radius:10px;padding:.8rem 1rem;color:#fff;display:grid}
+.k small{font-size:.75rem;opacity:.9}.k b{font-size:1.5rem}.k i{font-style:normal;font-size:.7rem;justify-self:end}
+.k.g{background:#2fa35b}.k.b{background:#3b6cff}.k.y{background:#c9a227}.k.r{background:#dc4a5e}
+.vp-chart{background:#fff;border:1px solid #e1e5f0;border-radius:12px;padding:1rem 1.2rem}
+.vp-chart h3{font-size:.95rem;margin:0 0 .8rem}
+.vp-bars{height:200px;display:flex;align-items:flex-end;gap:.8rem}
+.vp-bar{flex:1;height:var(--h);min-height:30px;background:#3b6cff;border:0;border-radius:6px 6px 0 0;position:relative;cursor:pointer;transition:background .2s,transform .2s}
+.vp-bar span{position:absolute;bottom:-1.5rem;left:0;right:0;font-size:.75rem;color:#5a6490}
+.vp-bar:hover{transform:translateY(-3px)}.vp-bar.on{background:#c9a227}
+.vp-bar:focus-visible,.vp-faq summary:focus-visible{outline:3px solid var(--valora-gold-light);outline-offset:2px}
+.vp-chart{padding-bottom:2.2rem}
+.vp-two{display:grid;grid-template-columns:1fr 1.5fr;gap:3rem;align-items:start}
+.vp-table-wrap{overflow-x:auto}
+.vp-table{width:100%;border-collapse:collapse}
+.vp-table th,.vp-table td{padding:.9rem 1rem;border-bottom:1px solid rgba(255,255,255,.12);text-align:center}
+.vp-table th:first-child{text-align:left;font-weight:500}
+.vp-table thead th{color:var(--valora-gold-light)}.vp-table .fa-check{color:#4ade80}
+.vp-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
+.vp-gallery figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid rgba(201,162,39,.4)}
+.vp-gallery img{display:block;width:100%;height:auto}
+.vp-gallery figcaption{padding:.8rem 1rem;font-size:.92rem;background:rgba(5,11,74,.85)}
+.vp-faq details{border-bottom:1px solid rgba(255,255,255,.14);padding:1rem 0}
+.vp-faq summary{cursor:pointer;font-weight:600}.vp-faq p{margin:.6rem 0 0;opacity:.8;line-height:1.6}
+@media(max-width:860px){.vp-offer-grid{grid-template-columns:1fr 1fr}.vp-app{grid-template-columns:1fr}.vp-app aside ul,.vp-app aside em{display:none}.vp-kpis{grid-template-columns:1fr 1fr}.vp-two{grid-template-columns:1fr;gap:1.5rem}.vp-gallery{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.vp-bar{transition:none}}
+.vp-ribbon{display:block;position:relative;z-index:5;margin-top:var(--nav-height,72px);padding:.7rem 1rem;text-align:center;background:linear-gradient(90deg,#c9a227,#f2d675);color:#050b4a;font-size:.92rem;text-decoration:none}.vp-ribbon u{margin-left:.4rem;font-weight:700}
+.vp-ribbon+.hero{margin-top:0}

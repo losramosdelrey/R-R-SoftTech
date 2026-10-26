@@ -1,8 +1,8 @@
 /* R&R SoftTech - Service Worker (requerido para instalar la web como app) */
 const CACHE = 'rr-softtech-v1';
 const CORE = [
-  './', 'index.html', 'servicios.html', 'nosotros.html', 'proceso.html', 'contacto.html',
-  'en/index.html', 'en/services.html', 'en/about.html', 'en/process.html', 'en/contact.html',
+  './', 'index.html', 'valora.html', 'servicios.html', 'nosotros.html', 'proceso.html', 'contacto.html',
+  'en/index.html', 'en/valora.html', 'en/services.html', 'en/about.html', 'en/process.html', 'en/contact.html',
   'css/styles.css', 'js/script.js', 'manifest.webmanifest',
   'assets/icons/icon-192.png', 'assets/icons/icon-512.png'
 ];
