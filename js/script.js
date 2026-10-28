@@ -5,17 +5,23 @@
 // Ruta de este script (sirve para localizar sw.js tanto en / como en /en/)
 const SCRIPT_URL = document.currentScript ? document.currentScript.src : '';
 
-// Initialize AOS
-AOS.init({
-    duration: 800,
-    easing: 'ease-out-cubic',
-    once: true,
-    offset: 80
-});
+// Initialize AOS (solo si la página lo carga: valora.html no lo usa)
+if (typeof AOS !== 'undefined') {
+    AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 80
+    });
+}
 
 // ========== Particles Background ==========
+// Solo se activa en las páginas que tienen <canvas id="particles-canvas"> (en valora.html no existe).
+(function () {
 const canvas = document.getElementById('particles-canvas');
+if (!canvas) return;
 const ctx = canvas.getContext('2d');
+const reducirMovimiento = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 let particles = [];
 let mouse = { x: null, y: null, radius: 120 };
@@ -125,7 +131,12 @@ function animateParticles() {
 }
 
 initParticles();
-animateParticles();
+if (reducirMovimiento) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => p.draw());   // estrellas fijas, sin animación
+} else {
+    animateParticles();
+}
 
 // Mouse tracking for particles & cursor glow
 const cursorGlow = document.querySelector('.cursor-glow');
@@ -144,6 +155,7 @@ document.addEventListener('mouseleave', () => {
     mouse.x = null;
     mouse.y = null;
 });
+})();
 
 // ========== Navbar ==========
 const navbar = document.getElementById('navbar');
@@ -152,26 +164,30 @@ const navLinks = document.getElementById('nav-links');
 const navLinkItems = document.querySelectorAll('.nav-link');
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+    if (navbar) {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     }
     
     // Update active nav link
     updateActiveNav();
 });
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-});
+if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    });
+}
 
 navLinkItems.forEach(link => {
     link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
+        if (hamburger) hamburger.classList.remove('active');
+        if (navLinks) navLinks.classList.remove('active');
         document.body.style.overflow = '';
     });
 });
@@ -237,17 +253,19 @@ if (heroStats) {
 // ========== Back to Top ==========
 const backToTop = document.getElementById('back-to-top');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 500) {
-        backToTop.classList.add('visible');
-    } else {
-        backToTop.classList.remove('visible');
-    }
-});
+if (backToTop) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
+    });
 
-backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
 
 // ========== Contact Form ==========
 const contactForm = document.getElementById('contact-form');
@@ -369,15 +387,15 @@ console.log('%cEl nexo entre tu idea y la excelencia digital.', 'font-size: 12px
     const isAndroid = /android/i.test(ua);
 
     const T = isEN ? {
-        title: 'Download the app',
-        intro: 'Install R&R SoftTech on your device to open it like any other app.',
+        title: 'Install the website as an app',
+        intro: 'Add the R&R SoftTech website to your device to open it like any other app. (The Valora program for Windows is downloaded from the Valora page.)',
         ios: ['Tap the <strong>Share</strong> button in Safari.', 'Choose <strong>Add to Home Screen</strong>.', 'Tap <strong>Add</strong>.'],
         android: ['Open the browser menu <strong>(⋮)</strong>.', 'Tap <strong>Install app</strong> or <strong>Add to Home screen</strong>.', 'Confirm with <strong>Install</strong>.'],
         desktop: ['Look for the <strong>install icon</strong> at the right of the address bar (Chrome / Edge).', 'Click <strong>Install</strong>.'],
         close: 'Close'
     } : {
-        title: 'Descargar la aplicación',
-        intro: 'Instala R&R SoftTech en tu dispositivo para abrirla como cualquier otra app.',
+        title: 'Instalar la web como aplicación',
+        intro: 'Añade la web de R&R SoftTech a tu dispositivo para abrirla como cualquier otra app. (El programa Valora para Windows se descarga desde la página de Valora.)',
         ios: ['Pulsa el botón <strong>Compartir</strong> de Safari.', 'Elige <strong>Añadir a pantalla de inicio</strong>.', 'Pulsa <strong>Añadir</strong>.'],
         android: ['Abre el menú del navegador <strong>(⋮)</strong>.', 'Pulsa <strong>Instalar aplicación</strong> o <strong>Añadir a pantalla de inicio</strong>.', 'Confirma con <strong>Instalar</strong>.'],
         desktop: ['Busca el <strong>icono de instalar</strong> a la derecha de la barra de direcciones (Chrome / Edge).', 'Haz clic en <strong>Instalar</strong>.'],

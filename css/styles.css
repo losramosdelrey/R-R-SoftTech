@@ -1830,7 +1830,7 @@ body:hover .cursor-glow {
     z-index: 998;
 }
 
-.fab {
+.fab-group .fab {
     position: relative;
     width: 56px;
     height: 56px;
@@ -1844,11 +1844,11 @@ body:hover .cursor-glow {
     transition: var(--transition);
 }
 
-.fab:hover {
+.fab-group .fab:hover {
     transform: translateY(-4px) scale(1.06);
 }
 
-.fab:focus-visible,
+.fab-group .fab:focus-visible,
 .install-btn:focus-visible {
     outline: 3px solid #fff;
     outline-offset: 3px;
@@ -1971,7 +1971,7 @@ body:hover .cursor-glow {
         bottom: calc(18px + env(safe-area-inset-bottom, 0px));
     }
 
-    .fab {
+    .fab-group .fab {
         width: 52px;
         height: 52px;
         font-size: 1.35rem;
